@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    window.addEventListener("resize", restart);
+        function scrollLefts() {
+            document.querySelectorAll('.arrows').forEach(function(button) {
+                button.style.pointerEvents = 'none';
+                button.style.opacity = '0';
+                window.scrollBy({
+                    top: 0,
+                    left: -(document.documentElement.clientWidth),
+                    behavior: 'smooth'
+                });
+                setTimeout(function() {
+                button.style.opacity = '1';
+                button.style.pointerEvents = 'auto';
+            }, 1000);
+        });
+        }
+        function scrollRight() {
+            document.querySelectorAll('.arrows').forEach(function(button) {
+                button.style.pointerEvents = 'none';
+                button.style.opacity = '0';
+                window.scrollBy({
+                    top: 0,
+                    left: document.documentElement.clientWidth,
+                    behavior: 'smooth'
+                });
+                setTimeout(function() {
+                button.style.opacity = '1';
+                button.style.pointerEvents = 'auto';
+            }, 1000);
+        });
+        }
+        function restart() {
+            window.scrollTo({
+                left: 0
+            });
+        }
+    </script>
+
+    <style>
+        html {
+            height: 100%;
+            user-select: none;
+        }
+        body {
+        width: 800%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding: 0;
+        margin: 0;
+        background-color: rgb(134, 134, 134);
+    }
+    .horizon {
+        display: flex;
+        width: 800vw;
+        height: 100vh;
+    }
+    .screen {
+        width: 100vw;
+        height: 100vh;
+    }
+    .buttons {
+        position: fixed;
+        display: flex;
+        top: 45%;
+        width: 100%;
+        z-index: 2;
+    }
+    .arrows {
+        width: 80px;
+        height: 80px;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .left {
+        position: absolute;
+        left: 5%;
+    }
+    .right {
+        position: absolute;
+        right: 5%;
+    }
+    .restart {
+        position: absolute;
+        left: 45%;
+        top: 40vh;
+    }
+
+    .text {
+        position: relative;
+        z-index: 1;
+        width: 50vw;
+        height: 5vh;
+        top: 15vh;
+        left: 25vh;
+        font-size: 2.1vw;
+    }
+    .title {
+        text-align: center;
+        line-height: 100vh;
+        position: relative;
+        z-index: 1;
+        font-weight: 900;
+        font-size: 3vw;
+    }
+    .background {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .one .background {
+        left: 0;
+    }
+    .two .background {
+        left: 100vw;
+        object-fit: contain;
+    }
+    .three .background {
+        left: 200vw;
+        object-fit: contain;
+    }
+
+    img {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 100%;
+    }
+
+    #wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .upper {
+        height: 25vh;
+        background-image: linear-gradient(rgb(15, 71, 78), #bde3e2);
+    }
+    .lower {
+        height: 50vh;
+        background-image: linear-gradient(#f8dad4, #f3ccc4);
+    }
+
+    mark {
+        background-color: rgb(35, 206, 112);
+    }
+    </style>
+</head>
+<body>
+    <div class="horizon">
+    <div class="screen one">
+        <div id="wrapper">
+        <div class="title"><mark>Working Through my Disability in College</mark></div>
+        <div class="background">
+            <div class="upper"></div>
+            <img src="./images/waves.gif" />
+            <div class="lower"></div>
+        </div>
+        </div>
+    </div>
+    <div class="screen two">
+        <div class="text"><mark>It’s late 2019. I’d just finished up my first semester at Harper College. My grades? Nearly all F’s. I promptly dropped out, spending months trying to figure out my life.</mark></div>
+        <div class="background">
+            <img src="./images/Harper.jpg" />
+        </div>
+    </div>
+    <div class="screen three">
+        <div class="text"><mark>For as long as I could remember, I’d been a ‘bad’ student. I failed all my classes, annoyed many teachers, and disappointed both my parents and myself. None of this changed at Harper, and so I dropped out to try and see if I had potential in other parts of life.</mark></div>
+        <div class="background">
+            <img src="./images/Grades.png" />
+        </div>
+    </div>
+    <div class="screen four">
+        <div class="text"><mark>After hopping from job to job, I finally stopped and asked myself: “Could there be something wrong with me?” Clearly, there was. But was it something I could get help for?
+After finally speaking with my doctor about my issues with school and with focusing on things in general, he responded with a disability that I hadn’t thought much of at all; ADHD.
+After running tests, it seems that the culprit was finally found. All of these issues I had been having traced back to this one diagnosis. My lack of focus in class could finally be explained!</mark></div>
+        <div class="background">
+            <img src="./images/ADHDP.jpg" />
+        </div>
+    </div>
+    <div class="screen five">
+        <div class="text"><mark>With this diagnosis, I could now work on myself while accounting for my disability. Working on my life through these new lenses helped me immensely; I treated myself and those around me better, and became more responsible. The treatments didn’t do it all for me: I still had to make myself do all of these important things. What the treatment did do is make things easier to start.</mark></div>
+        <div class="background">
+            <img src="./images/ADHDT.jpg" />
+        </div>
+    </div>
+    <div class="screen six">
+        <div class="text"><mark>After working a new job and seeing how well my treatment worked, I chose to resume school. I was amazed. For once in my life, I was doing well in classes! I quickly ended my first semester back with great grades, and I finally felt confident in my actions. I knew I could do things better from here on out.</mark></div>
+        <div class="background">
+            <img src="./images/GoodGrades.jpeg" />
+        </div>
+    </div>
+    <div class="screen seven">
+        <div class="text"><mark>Everyone who needs help might need it in different ways. In my case, I got lucky with my treatment and doctors. They quickly helped me get my life back on track, and helped me to feel capable again. Other people who suffer from ADHD may not find success so quickly, but I would still implore anyone who’s questioning to ask their doctor.</mark></div>
+        <div class="background">
+            <img src="./images/Doctor.jpg" />
+        </div>
+    </div>
+    <div class="screen eight">
+        <div class="text"><mark>Now that I understand myself better, I’m able to commit myself to my aspirations that I had major trouble with in the past. I finally feel that I can find my success. Something like this website would have never come up if I hadn’t asked my doctor all those years ago.
+I hope that others like me, who might wonder about or suffer from these sorts of disabilities unknowingly, find their success as well.</mark></div>
+        <div class="background">
+            <img src="./images/Website.jpg" />
+        </div>
+    </div>
+    </div>
+    <div class="buttons">
+        <input type="image" class="arrows left" src="./images/left.png" onclick="scrollLefts()"/>
+        <input type="image" class="arrows right" src="./images/right.png" onclick="scrollRight()"/>
+        <input type="image" class="arrows restart" src="./images/Restart.png" onclick="restart()"/>
+    </div>
+</body>
+</html>
